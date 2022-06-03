@@ -1,2 +1,1 @@
-# build
-git clone https://github.com/tacobayle/tfAnsibleVcenterAviController ; cd tfAnsibleVcenterAviController ; terraform init ; terraform apply -auto-approve -var-file=avi.json
+terraform destroy -auto-approve -var-file=avi.json ;  cd .. ; rm -fr tfAnsibleVcenterAviController ; git clone https://github.com/tacobayle/tfAnsibleVcenterAviController ; cd tfAnsibleVcenterAviController ; terraform init ; terraform apply -auto-approve -var-file=avi.json
