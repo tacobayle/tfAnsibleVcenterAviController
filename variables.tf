@@ -10,10 +10,6 @@ variable "avi_controller_url" {}
 #
 # other variables
 #
-variable "avi_username" {
-  default = "admin"
-}
-
 variable "vsphere_server" {
   default = "wdc-06-vc12.oc.vmware.com"
 }

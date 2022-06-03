@@ -1,6 +1,7 @@
 {
   "avi": {
     "config": {
+      "username": "admin",
       "version" : "21.1.4",
       "cluster": true,
       "vcenter": {

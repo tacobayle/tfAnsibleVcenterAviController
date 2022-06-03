@@ -9,7 +9,7 @@ data "template_file" "avi_yaml_values_dhcp_cluster" {
     avi_password = var.avi_password
     avi_old_password = var.avi_old_password
     avi_version = var.avi.config.version
-    avi_username = var.avi_username
+    avi_username = var.avi.config.username
     vsphere_username = var.vsphere_username
     vsphere_password = var.vsphere_password
     vsphere_server = var.vsphere_server
@@ -45,7 +45,7 @@ data "template_file" "avi_yaml_values_dhcp_standalone" {
     avi_password = var.avi_password
     avi_old_password = var.avi_old_password
     avi_version = var.avi.config.version
-    avi_username = var.avi_username
+    avi_username = var.avi.config.username
     vsphere_username = var.vsphere_username
     vsphere_password = var.vsphere_password
     vsphere_server = var.vsphere_server
@@ -81,7 +81,7 @@ data "template_file" "avi_yaml_values_static_cluster" {
     avi_password = var.avi_password
     avi_old_password = var.avi_old_password
     avi_version = var.avi.config.version
-    avi_username = var.avi_username
+    avi_username = var.avi.config.username
     vsphere_username = var.vsphere_username
     vsphere_password = var.vsphere_password
     vsphere_server = var.vsphere_server
@@ -117,7 +117,7 @@ data "template_file" "avi_yaml_values_static_standalone" {
     avi_password = var.avi_password
     avi_old_password = var.avi_old_password
     avi_version = var.avi.config.version
-    avi_username = var.avi_username
+    avi_username = var.avi.config.username
     vsphere_username = var.vsphere_username
     vsphere_password = var.vsphere_password
     vsphere_server = var.vsphere_server
