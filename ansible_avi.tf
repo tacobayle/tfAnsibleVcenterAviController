@@ -28,7 +28,7 @@ data "template_file" "avi_yaml_values_dhcp_cluster" {
 }
 
 resource "null_resource" "dump_locally_avi_yaml_values_dhcp_cluster" {
-  count            = var.dhcp == false && var.avi.config.cluster == true ? 1 : 0
+  count            = var.dhcp == true && var.avi.config.cluster == true ? 1 : 0
   provisioner "local-exec" {
     command = "cat > avi.yml <<EOL\n${data.template_file.avi_yaml_values_dhcp_cluster[count.index].rendered}\nEOL"
   }
@@ -64,7 +64,7 @@ data "template_file" "avi_yaml_values_dhcp_standalone" {
 }
 
 resource "null_resource" "dump_locally_avi_yaml_values_dhcp_standalone" {
-  count            = var.dhcp == false && var.avi.config.cluster == true ? 1 : 0
+  count            = var.dhcp == true && var.avi.config.cluster == false ? 1 : 0
   provisioner "local-exec" {
     command = "cat > avi.yml <<EOL\n${data.template_file.avi_yaml_values_dhcp_standalone[count.index].rendered}\nEOL"
   }
@@ -145,7 +145,7 @@ resource "null_resource" "dump_locally_avi_yaml_values_static_standalone" {
 resource "null_resource" "avi_ansible" {
   depends_on = [null_resource.dump_locally_avi_yaml_values_dhcp_cluster, null_resource.dump_locally_avi_yaml_values_dhcp_standalone, null_resource.dump_locally_avi_yaml_values_static_cluster, null_resource.dump_locally_avi_yaml_values_static_standalone, null_resource.wait_https_controller_dhcp_cluster, null_resource.wait_https_controller_dhcp_standalone, null_resource.wait_https_controller_static_standalone, null_resource.wait_https_controller_static_cluster]
   provisioner "local-exec" {
-    command = "git clone ${var.ansible.aviConfigureUrl} --branch ${var.ansible.aviConfigureTag}; cd ${split("/", var.ansible.aviConfigureUrl)[4]} ; ansible-playbook vcenter.yml --extra-vars @../avi.yml "
+    command = "git clone ${var.ansible.aviConfigureUrl} --branch ${var.ansible.aviConfigureTag}; cd ${split("/", var.ansible.aviConfigureUrl)[4]} ; ansible-playbook vcenter.yml --extra-vars @../avi.yml"
   }
 }
 
