@@ -1,0 +1,37 @@
+controllerPrivateIps: |
+  ${controller_ips}
+controller:
+  cluster: ${cluster}
+  ntp: |
+    ${controller_ntp}
+  dns: |
+    ${controller_dns}
+  environment: vcenter
+avi_password: ${avi_password}
+avi_old_password: ${avi_old_password}
+avi_version: ${avi_version}
+avi_username: ${avi_username}
+vsphere_username: ${vsphere_username}
+vsphere_password: ${vsphere_password}
+vsphere_server: ${vsphere_server}
+vcenter:
+  domains: |
+    ${domains}
+  cloud:
+    name: ${cloud_name}
+    dc: ${dc}
+    dchp_enabled: ${dchp_enabled}
+    network_management: |
+      ${network_management}
+    network_vip: |
+      ${network_vip}
+    network_backend: |
+      ${network_backend}
+    service_engine_groups: |
+      ${service_engine_groups}
+    pools: |
+      ${pools}
+    pool_groups: |
+      ${pool_groups}
+    virtual_services: |
+      ${virtual_services}
