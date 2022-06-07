@@ -33,7 +33,7 @@
           },
           "service_engine_groups": [
             {
-              "name": "seg1"
+              "name": "Default-Group"
             }
           ],
           "pools": [],
