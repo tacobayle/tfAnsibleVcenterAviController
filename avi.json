@@ -31,6 +31,14 @@
             "vcenter_dvs": true,
             "type": "V4"
           },
+          "network_backend": {
+            "name": "vxw-dvs-34-virtualwire-117-sid-1080116-sof2-01-vc08-avi-dev113",
+            "dhcp_enabled": true,
+            "exclude_discovered_subnets": true,
+            "cidr": "100.64.130.0/24",
+            "vcenter_dvs": true,
+            "type": "V4"
+          },
           "service_engine_groups": [
             {
               "name": "Default-Group"
