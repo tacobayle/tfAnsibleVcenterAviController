@@ -6,7 +6,7 @@ controller:
     ${controller_ntp}
   dns: |
     ${controller_dns}
-  environment: vcenter
+  environment: VMWARE
 avi_password: ${avi_password}
 avi_old_password: ${avi_old_password}
 avi_version: ${avi_version}
