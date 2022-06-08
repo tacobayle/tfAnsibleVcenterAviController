@@ -3,7 +3,7 @@
     "config": {
       "username": "admin",
       "version" : "21.1.4",
-      "cluster": true,
+      "cluster": false,
       "vcenter": {
         "domains":
         [
