@@ -15,5 +15,5 @@ output "Avi_controller_ips_static_standalone" {
 }
 
 output "destroy_command" {
-  value = "ansible-playbook aviAbsent/local.yml --extra-vars @~/.creds.json ; terraform destroy -auto-approve -var-file=avi.json"
+  value = "ansible-playbook ${split("/", var.ansible.aviPbAbsentUrl)[4]}/local.yml --extra-vars @~/.creds.json ; terraform destroy -auto-approve -var-file=avi.json"
 }
