@@ -54,7 +54,6 @@ data "template_file" "avi_yaml_values_dhcp_standalone" {
     dchp_enabled = jsonencode(var.avi.config.vcenter.cloud.dhcp_enabled)
     network_management = jsonencode(var.avi.config.vcenter.cloud.network_management)
     network_vip = jsonencode(var.avi.config.vcenter.cloud.network_vip)
-    network_backend = jsonencode(var.avi.config.vcenter.cloud.network_backend)
     service_engine_groups = jsonencode(var.avi.config.vcenter.cloud.service_engine_groups)
     pools = jsonencode(var.avi.config.vcenter.cloud.pools)
     pool_groups = jsonencode(var.avi.config.vcenter.cloud.pool_groups)
