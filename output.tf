@@ -13,3 +13,7 @@ output "Avi_controller_ips_static_cluster" {
 output "Avi_controller_ips_static_standalone" {
   value = var.dhcp == false && var.avi.config.cluster== false ? vsphere_virtual_machine.controller_static_standalone[*].default_ip_address  : null
 }
+
+output "destroy_command" {
+  value = "ansible-playbook aviAbsent/local.yml --extra-vars @~/.creds.json ; terraform destroy -auto-approve -var-file=avi.json"
+}
